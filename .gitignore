@@ -16,3 +16,4 @@
 /tmp
 #personalizado
 config/database.yml
+Gemfile.lock

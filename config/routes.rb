@@ -1,6 +1,9 @@
 Bioheal::Application.routes.draw do
+  get "dashboard/index"
+  devise_for :users
   get "home/index"
-  root 'home#index' 
+  root 'dashboard#index' 
+  get '/info', :to => redirect('/info.html')
  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

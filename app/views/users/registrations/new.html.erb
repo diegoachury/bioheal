@@ -1,0 +1,98 @@
+
+   <!-- start: Estilo-->
+<%= render 'shared/style' %>
+	<!-- end: Estilo-->
+<style>
+body{
+	background: url(../img/fondo_login.png) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+.abajo{
+	padding-top: 20%;
+}
+</style>	
+<div class="container ">
+<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header">
+						<h2><i class="icon-edit"></i>Formulario de Registro</h2>
+						<div class="box-icon">
+						</div>
+					</div>
+					<div class="box-content">
+						<div class="row-fluid">
+							<!--derecha-->
+							<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+								<%= f.error_notification %>
+							<div class="span2">
+								<img src="/img/contacto.png" class="img-circle">
+								<br>
+								<br>
+								<p>Si usted busca negocios innovadores que le permitan alcanzar sus objetivos financieros y de calidad de vida, Bioheal Colombia tiene una oportunidad de negocios sin precedente para usted.</p>
+								<div class="abajo">
+									<img src="/img/logo.png">
+									<br>
+								<p>Si ya eres uno de nustros distribuidores puedes acceder</p>
+								<%= link_to "Inciar sesión", new_user_session_path %>
+								</div> 
+							</div>
+							<!--columna 1-->	
+							<div class="span3">
+								<fieldset>
+								<legend><h2>Información Basica</h2></legend>
+								<%= f.input :tipo_documento, :required => true,  :collection => [['CC', 'CC'], ['NIT', 'NIT'], ['CE', 'CE']], :as => :select %>
+								<%= f.input :numero_documento, :required => true %>
+								<%= f.input :nombres, :required => true %>
+								<%= f.input :apellidos, :required => true %>
+								<%= f.input :sexo, :required => true,  :collection => [['Masculino', 'M'], ['Femenino', 'F']], :as => :select %>
+								<%= f.input :pais, :required => true,  :collection => [['Colombia', 'colombia']], :as => :select %>
+								<%= f.input :ciudad %>
+							</fieldset>
+							</div>		
+							<!--columna 2-->	
+							<div class="span3">
+								<!--<form class="form-horizontal">-->
+								<fieldset>
+								<legend><h2>Información del Cliente</h2></legend>
+								<%= f.input :direccion %>
+								<%= f.input :barrio %>
+								<%= f.input :telefono %>
+								<%= f.input :tipo_cliente, :required => true,  :collection => [['Persona Natural', 'persona natural'], ['Persona Juridica', 'persona juridica']], :as => :select, :input_html => { :class => ' selectpicker'} %>
+								<%= f.input :iva, :required => true, :label => 'Retiene IVA', :collection => [['Si', 'si'], ['No', 'no']], :as => :select %>
+								<%= f.input :regimen, :required => true, :label => 'Regimen', :collection => [['Comun', 'comun'], ['Simplificado', 'simplificado']], :as => :select %>
+							</fieldset>
+						   </div>
+							<!--columna 3-->
+							<div class="span3">
+							<fieldset>
+								<legend><h2>Información para Acceder</h2></legend>
+								<%= f.input :email, :required => true, :label => 'Correo Electronico'  %>
+								<%= f.input :password, :required => true, :label => 'Contraseña' %>
+								<%= f.input :password_confirmation, :label => 'Confirmar contraseña', :required => true %>
+								<%= f.input :patrocinador %>
+								<%= f.input :lado, :required => true,  :collection => [['Derecho', '1'], ['Izquierdo', '2']], :as => :select, :input_html => { :class => ' selectpicker'} %>
+								<%= f.input :paquete, :required => true,  :collection => [['Paquete Premium ($1,290,000)', 'paquete Premium'], ['Paquete 50/50 Premium($645,000)', 'Paquete 50/50'], ['Paquete Basico ($980,000)', 'Paquete Basico'], ['Paquete 50/50 Basico ($490,000)', 'Paquete 50/50 Basico'], ['Paquete Vendedor ($90,000)', 'Paquete Vendedor']], :as => :select, :input_html => { :class => ' selectpicker'} %>							
+							</fieldset>
+							</div>
+							<!-- finaliza columna 3-->
+						</div><!--/cierra: contenido-->
+						 <div><%= f.input :termino, :as => :boolean, :label => false, :required => true, :input_html => { :checked => false }%> <span><small>Acepto los terminos y condiciones de Registro y Afiliacion (Ver terminos aqui)</small></span></div>
+						<div class="form-actions">
+							    <%= f.button :submit, "Registrar", :class => 'btn btn-primary' %>
+							  </div>
+						<% end %>
+					</div>
+				</div><!--/span-->
+
+			</div>
+</div>
+	<!-- start: JavaScript-->
+		<%= render 'shared/javascript' %>	
+	<!-- end: JavaScript-->
+	<script>
+$('.datepicker').datepicker();
+</script>
+

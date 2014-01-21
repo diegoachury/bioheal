@@ -1,0 +1,24 @@
+<div id="sidebar-left" class="span2">
+				
+				<div class="nav-collapse sidebar-nav">
+					<ul class="nav nav-tabs nav-stacked main-menu">
+						<li><a href="/home/dashboard"><i class="icon-desktop"></i><span class="hidden-tablet">Principal</span></a></li>	
+						<li>
+							<a class="submenu" href="/home/perfil"><i class="icon-eye-open"></i><span class="hidden-tablet"> Perfil</span></a>
+						</li>
+						<li>
+							<a class="dropmenu" href="#"><i class="icon-group"></i><span class="hidden-tablet"> Genealogia</span> <span class="label">2</span></a>
+							<ul>
+								<li><a class="submenu" href="infrastructure.html"><i class="icon-sitemap"></i><span class="hidden-tablet"> Esquema Binario</span></a></li>
+								<li><a class="submenu" href="messages.html"><i class="icon-sitemap"></i><span class="hidden-tablet">Esquema Unilevel</span></a></li>
+							</ul>	
+						</li>
+						<li><a href="form.html"><i class="icon-briefcase"></i><span class="hidden-tablet">Market</span></a></li>
+						<li>
+							<%= link_to destroy_user_session_path, :method => :delete do %>	
+						<i class=" icon-off"></i><span class="hidden-tablet">Salir</span>
+						<% end %>
+						</li>
+					</ul>
+				</div>
+			</div>

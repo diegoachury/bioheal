@@ -1,0 +1,53 @@
+
+
+<%= render 'shared/style' %>
+<style>
+body{
+	background: url(../img/fondo_login.png) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+</style>	
+<body>
+		<div class="container-fluid-full">
+		<div class="row-fluid">
+					
+			<div class="row-fluid">
+				<div class="login-box">
+					<div><img src="/img/logo.png"></div>
+					<h2>Acceder con tu cuenta</h2>
+					<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+					<fieldset>
+					    <%= f.input :login, :label => 'Usuario', :required => false, :autofocus => true, input_html: { class: 'input-large span12' }, placeholder: 'correo@hotmail.com' %>
+					    <%= f.input :password, :label => 'Contraseña', :required => false, input_html: { class: 'input-large span12' }, placeholder: '***' %>
+					
+					 	<%= f.button :submit, "Iniciar", :class => "btn btn-success span12" %>
+					 </fieldset>	
+					 <% end %>
+					 <hr />
+					<h3>¿Cambiar su contraseña?</h3>
+					<p>
+						No hay problema, <%= link_to "click aqui", new_password_path(resource_name) %> para solicitar.<br>
+						Eres nuevo registrate <%= link_to "click aqui", new_user_registration_path %> 
+					</p>
+	
+				</div>
+			</div><!--/row-->
+			
+				</div><!--/fluid-row-->
+				
+	</div><!--/.fluid-container-->
+
+	<!-- start: JavaScript-->
+		<%= render 'shared/javascript' %>	
+	<!-- end: JavaScript-->
+
+
+
+
+
+
+<h2>Sign in</h2>
+

@@ -1,4 +1,107 @@
-<h1>Eventos</h1>
-<p></p>
-<p>firts commit</p>
+
+   <!-- start: Estilo-->
+<%= render 'shared/style' %>
+	<!-- end: Estilo-->
+<style>
+body{
+	background: url(../img/fondo_login.png) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+.abajo{
+	padding-top: 20%;
+}
+.down{
+	padding-top: 3%;
+}
+</style>
+<%= render 'shared/nav' %>	
+<div class="container down ">
+
+<div class="alert alert-block">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4>Importante!</h4>
+  <p>Bienvenido a Bioheal, es impresendible que termines de completar tu registro para que puedas transformate en uno de nuestros distribuidores acercate a nuestra oficina principal.</p>
+</div>
+
+<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header">
+						<h2><i class="icon-edit"></i></h2>
+						<div class="box-icon">
+						</div>
+					</div>
+					<div class="box-content">
+						<div class="row-fluid">
+							<!--derecha-->
+							<div class="span9">
+								<h1>Agenda </h1>
+					
+									<div class="priority high"><span>Neiva</span></div>
+									
+									<div class="task high">
+										<div class="desc">
+											<div class="title">Presentación Bioheal</div>
+											<div>Presentación de bioheal </div>
+										</div>
+										<div class="time">
+											<div class="date">Ene 23, 2014</div>
+											<div> 8:00 AM</div>
+										</div>
+									</div>
+									<div class="task high">
+										<div class="desc">
+											<div class="title">Reunión de trabajo</div>
+											<div>Lideres de trabajo.</div>
+										</div>
+										<div class="time">
+											<div class="date">Ene 24, 2014</div>
+											<div>10:00 AM</div>
+										</div>
+									</div>									
+									<div class="priority medium"><span>Villavicencio</span></div>
+									
+									<div class="task medium">
+										<div class="desc">
+											<div class="title">Reunión de trabajo</div>
+											<div>Lideres de trabajo.</div>
+										</div>
+										<div class="time">
+											<div class="date">Ene 24, 2014</div>
+											<div> 10:00 AM</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<!--columna 1-->		
+							<div class="span2">
+								<img src="/img/evento1.jpg" class="img-circle">
+								<br>
+								<br>
+								<p>Si usted busca negocios innovadores que le permitan alcanzar sus objetivos financieros y de calidad de vida, Bioheal Colombia tiene una oportunidad de negocios sin precedente para usted.</p>
+								<div class="abajo">
+									<img src="/img/logo.png">
+									<br>
+								<p>Si ya eres uno de nustros distribuidores puedes acceder</p>
+
+								<%= link_to "Inciar sesión", new_user_session_path %>
+								</div> 
+							</div>
+		
+							<!-- finaliza columna 3-->
+						</div><!--/cierra: contenido-->
+					</div>
+				</div><!--/span-->
+
+			</div>
+</div>
+	<!-- start: JavaScript-->
+		<%= render 'shared/javascript' %>	
+	<!-- end: JavaScript-->
+	<script>
+$('.datepicker').datepicker();
+</script>
+
 	

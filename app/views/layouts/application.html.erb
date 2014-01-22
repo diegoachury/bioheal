@@ -7,20 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-    <li>
-  <%= link_to('Edit registration', edit_user_registration_path) %>
-  </li>
-<% end %>       
+  <% flash.each do |name, msg| %>
+  <%= content_tag :div, :id => "flash_#{name}", :class => "alert" do %>
+    <%= msg %>
+  <% end %>
+<% end %>
+
+
 <%= yield %>
 
 <script>
 $('.datepicker').datepicker();
+</script>
+<script>
+$('.dropdown-toggle').dropdown();
 </script>
 </body>
 </html>

@@ -19,7 +19,12 @@ module Bioheal
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    
     #heroku
-    config.assets.initialize_on_precompile = false
+    #lo cambio para que se pueda ejecutar todas las librerias javascript y css 
+    #cargadas con tuberia, en heroku es false
+    #de igual manera con este comando en el servidor se puede compilar 
+    #RAILS_ENV=production bundle exec rake assets:precompile
+    config.assets.initialize_on_precompile = true
   end
 end

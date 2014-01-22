@@ -8,7 +8,8 @@ gem 'rails', '4.0.2'
 group :production, :development, :test do
     gem 'pg'
 end 
-
+#newrelic para monitoreo
+gem 'newrelic_rpm'
 #interfaz de formulario
 gem 'simple_form'
 #creacion de usuario y login

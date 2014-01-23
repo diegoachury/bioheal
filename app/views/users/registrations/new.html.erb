@@ -13,8 +13,11 @@ background-size: cover;
 .abajo{
 	padding-top: 20%;
 }
+.down_page{
+	padding-top: 3%;
+}
 </style>	
-<div class="container ">
+<div class="container down_page">
 <div class="row-fluid">
 				<div class="box span12">
 					<div class="box-header">
@@ -73,7 +76,7 @@ background-size: cover;
 								<%= f.input :password, :required => true, :label => 'Contraseña' %>
 								<%= f.input :password_confirmation, :label => 'Confirmar contraseña', :required => true %>
 								<%= f.input :patrocinador %>
-								<%= f.input :lado, :required => true,  :collection => [['Derecho', '1'], ['Izquierdo', '2']], :as => :select, :input_html => { :class => ' selectpicker'} %>
+								<%= f.input :lado, :required => true,  :collection => [['Derecho', 'derecha'], ['Izquierdo', 'Izquierda']], :as => :select, :input_html => { :class => ' selectpicker'} %>
 								<%= f.input :paquete, :required => true,  :collection => [['Paquete Premium ($1,290,000)', 'paquete Premium'], ['Paquete 50/50 Premium($645,000)', 'Paquete 50/50'], ['Paquete Basico ($980,000)', 'Paquete Basico'], ['Paquete 50/50 Basico ($490,000)', 'Paquete 50/50 Basico'], ['Paquete Vendedor ($90,000)', 'Paquete Vendedor']], :as => :select, :input_html => { :class => ' selectpicker'} %>							
 							</fieldset>
 							</div>

@@ -7,10 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% flash.each do |name, msg| %>
-  <%= content_tag :div, :id => "flash_#{name}", :class => "alert" do %>
-    <%= msg %>
-  <% end %>
+<%if user_signed_in? %>
+<% if current_user.activo?%>
+	<!-- start: Header -->
+	<%= render 'shared/menu_arriba' %>
+	<!-- start: Header -->
+<% else %>
+	<%= render 'shared/nav' %>
+<% end %>
 <% end %>
 
 
